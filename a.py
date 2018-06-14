@@ -8,6 +8,6 @@ l76 = L76GNSS(py, timeout=10)
 
 while(True):
      coord = l76.coordinates()
-     print("{} - {} - {}".format(coord, rtc .now(), gc.mem_free()))
-
+     databytes = struct.pack('d', coord[0])
+     print(databytes)
      gc.collect()
