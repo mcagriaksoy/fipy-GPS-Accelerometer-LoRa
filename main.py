@@ -14,7 +14,7 @@ from L76GNSS import L76GNSS
 from pytrack import Pytrack
 # setup as a station
 import gc
-
+pycom.wifi_on_boot(False)
 time.sleep(2)
 gc.enable()
 
