@@ -21,9 +21,9 @@ x=0
 
 #lora_packet.decrypt(packet, AppSKey, NwkSKey).toString('hex')
 lora = LoRa(mode=LoRa.LORAWAN, region=LoRa.EU868,adr=False, tx_retries=0, device_class=LoRa.CLASS_A)
-dev_addr = struct.unpack(">l", binascii.unhexlify('26011327'))[0]
-nwk_swkey = binascii.unhexlify('93896830809D21A62C175C8A772053C3')
-app_swkey = binascii.unhexlify('FC212CD2F15509CE2218F30A7380F58A')
+dev_addr = struct.unpack(">l", binascii.unhexlify('AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'))[0]
+nwk_swkey = binascii.unhexlify('AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA')
+app_swkey = binascii.unhexlify('AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA')
 
 lora.join(activation=LoRa.ABP, auth=(dev_addr, nwk_swkey, app_swkey))
 s = socket.socket(socket.AF_LORA, socket.SOCK_RAW)
