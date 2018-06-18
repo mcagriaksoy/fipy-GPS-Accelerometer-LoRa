@@ -1,33 +1,20 @@
 from network import LoRa
 from LIS2HH12 import LIS2HH12
-from L76GNSS import L76GNSS
 from pytrack import Pytrack
-from deepsleep import DeepSleep
-import deepsleep
 import pycom
 import socket
+import binascii
 import struct
 import pycom
 import network
 import cayenneLPP
 import time
-from network import Bluetooth
-import gc
 gc.enable()
-gc.collect()
-
-bt = Bluetooth()
-ds = DeepSleep()
-wlan = network.WLAN()
-bt.deinit()
-wlan.deinit()
-
 py = Pytrack()
 acc = LIS2HH12()
 l76 = L76GNSS(py, timeout=10)
-
 pycom.heartbeat(False)
-ds.enable_auto_poweroff()
+
 #lora_packet.decrypt(packet, AppSKey, NwkSKey).toString('hex')
 lora = LoRa(mode=LoRa.LORAWAN, region=LoRa.EU868,adr=False, tx_retries=0, device_class=LoRa.CLASS_A)
 dev_addr = struct.unpack(">l", binascii.unhexlify('26011327'))[0]
@@ -57,25 +44,25 @@ while True:
         c0 =coord[0]
         c1 =coord[1]
         if (str(coord[0]) != 'None'):
-            lpp.add_gps(c0, c1, 55)
+            lpp.add_gps(c0, c1, 100.98)
             lpp.send(reset_payload = True)
             time.sleep(0.3)
-            #print('Data sent')
+            print('Data sent')
+            s.setblocking(False)
         else:
             pycom.rgbled(0x7fff00)
-            #lpp.add_accelerometer(pitch,roll,0)
-            lpp.add_gps(0, 0, 55)
+                #lpp.add_accelerometer(pitch,roll,0)
+            lpp.add_gps(0.000000, 0.000000, 100.98, channel = 124)
             lpp.send()
             time.sleep(0.3)
-            #print('Data sent:')
-        s.setblocking(False)
+            print('Data sent:')
+            s.setblocking(False)
         time.sleep(0.1)
     else:
         pycom.rgbled(0x111111)
         print("SLEEP MODE ACTIVATED . . .")
         time.sleep(1)
-        #py.setup_sleep(20)
-        #py.go_to_sleep()
         print(". . .")
-        #ds.go_to_sleep(10)
+    gc.collect()
     gc.mem_free()
+       #py.setup_sleep(300)
