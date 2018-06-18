@@ -8,6 +8,7 @@ import pycom
 import socket
 import struct
 import pycom
+import binascii
 import network
 import cayenneLPP
 import time
@@ -57,12 +58,13 @@ while True:
         c0 =coord[0]
         c1 =coord[1]
         if (str(coord[0]) != 'None'):
+            pycom.rgbled(0x7fff00)
             lpp.add_gps(c0, c1, 55)
             lpp.send(reset_payload = True)
             time.sleep(0.3)
             #print('Data sent')
         else:
-            pycom.rgbled(0x7fff00)
+            pycom.rgbled(0xde0000)
             #lpp.add_accelerometer(pitch,roll,0)
             lpp.add_gps(0, 0, 55)
             lpp.send()
