@@ -14,14 +14,21 @@ import cayenneLPP
 import time
 from network import Bluetooth
 import gc
+import math
+
 gc.enable()
 gc.collect()
 
-bt = Bluetooth()
+
 ds = DeepSleep()
-wlan = network.WLAN()
-bt.deinit()
+ds.enable_auto_poweroff()
+#enable auto power off then li-po can't supply 3.3v
+bt = Bluetooth()
+bt.deinit() #close bluetooth
+wlan = network.WLAN() #close wlan
 wlan.deinit()
+
+
 
 py = Pytrack()
 acc = LIS2HH12()
@@ -47,25 +54,43 @@ while True:
     #print(wake_s)
     time.sleep(0.1)
     if(acc.activity()):
+
         pycom.rgbled(0x11fff1)
         coord = l76.coordinates()
         s.setblocking(True)
         lpp = cayenneLPP.CayenneLPP(size = 100, sock = s)
         pitch= acc.pitch()
         roll = acc.roll()
+        x,y,z = acc.acceleration()
+        if (x > y) and (x > z):
+            largest = x
+        elif (y > x) and (y > z):
+            largest = y
+        else:
+            largest = z
+
+        g = math.sqrt(x * x + y * y + z * z)
+        print("A:",g)
         #print('Pitch:',pitch)
         #print('Roll:' ,roll)
         c0 =coord[0]
         c1 =coord[1]
+        volt= py.read_battery_voltage()
+
         if (str(coord[0]) != 'None'):
             pycom.rgbled(0x7fff00)
+            lpp.add_accelerometer(x,y,z)
+            lpp.add_analog_input(g)
+            lpp.add_analog_input(volt, channel = 114)
             lpp.add_gps(c0, c1, 55)
-            lpp.send(reset_payload = True)
+            lpp.send()
             time.sleep(0.3)
             #print('Data sent')
         else:
             pycom.rgbled(0xde0000)
-            #lpp.add_accelerometer(pitch,roll,0)
+            lpp.add_accelerometer(x,y,z)
+            lpp.add_analog_input(g)
+            lpp.add_analog_input(volt, channel = 114)
             lpp.add_gps(0, 0, 55)
             lpp.send()
             time.sleep(0.3)
