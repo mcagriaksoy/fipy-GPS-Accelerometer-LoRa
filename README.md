@@ -12,4 +12,8 @@ Just select the option Payload Formats>>Cayenne and decode automatically.
 
 It uses EU868 MHz standarts.
 
-![cayenne-lpp dashboard](https://i.hizliresim.com/X6JgG6.png)
+![cayenne-lpp dashboard](https://yadi.sk/i/7vhg4n7A3YCBk7)
+
+![alt text](https://raw.githubusercontent.com/mcagriaksoy/fipy-GPS-Accelerometer-LoRa
+blob/master/1.PNG)
+
