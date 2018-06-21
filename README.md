@@ -18,9 +18,13 @@ Just select the option Payload Formats>>Cayenne and decode automatically.
 Also In python side we need to add these functions into the codeblock:
 
 lpp.add_accelerometer(xsum,ysum,zsum)
+
 lpp.add_analog_input(abs(gtotal-1))
+
 lpp.add_analog_input(volt, channel = 114)
+
 lpp.add_gps(c0, c1, 55)
+
 lpp.send()
 
 ![Cayenne](https://github.com/mcagriaksoy/fipy-GPS-Accelerometer-LoRa/blob/master/1.PNG)
@@ -33,10 +37,16 @@ lora = LoRa(mode=LoRa.LORAWAN, region=LoRa.EU868,adr=False, tx_retries=0, device
 -Required keys can be found on TTN network >> Applications >> Dashboard
 
 dev_addr = struct.unpack(">l", binascii.unhexlify('********'))[0]
+
 nwk_swkey = binascii.unhexlify('***************')
+
 app_swkey = binascii.unhexlify('****************')
+
 lora.join(activation=LoRa.ABP, auth=(dev_addr, nwk_swkey, app_swkey))
+
 s = socket.socket(socket.AF_LORA, socket.SOCK_RAW)
+
 s.setsockopt(socket.SOL_LORA, socket.SO_DR, 0)
+
 print ("LoRa Initialized")
 
