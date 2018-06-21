@@ -14,6 +14,5 @@ It uses EU868 MHz standarts.
 
 ![cayenne-lpp dashboard](https://yadi.sk/i/7vhg4n7A3YCBk7)
 
-![alt text](https://raw.githubusercontent.com/mcagriaksoy/fipy-GPS-Accelerometer-LoRa
-blob/master/1.PNG)
+![alt text](https://raw.githubusercontent.com/mcagriaksoy/fipy-GPS-Accelerometer-LoRa/blob/master/1.PNG)
 
