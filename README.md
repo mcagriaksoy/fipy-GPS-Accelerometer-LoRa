@@ -51,4 +51,4 @@ s.setsockopt(socket.SOL_LORA, socket.SO_DR, 0)
 print ("LoRa Initialized")
 
 
-![Project](https://github.com/mcagriaksoy/fipy-GPS-Accelerometer-LoRa/blob/master/2.PNG)
+![Project](https://github.com/mcagriaksoy/fipy-GPS-Accelerometer-LoRa/blob/master/2.jpg)
