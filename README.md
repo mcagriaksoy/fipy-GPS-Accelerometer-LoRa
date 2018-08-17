@@ -32,7 +32,7 @@ lpp.send()
 
 
 On the other hand we need to set the settings of LoRa:
-
+```
 lora = LoRa(mode=LoRa.LORAWAN, region=LoRa.EU868,adr=False, tx_retries=0, device_class=LoRa.CLASS_A)
 
 -Required keys can be found on TTN network >> Applications >> Dashboard
@@ -50,6 +50,6 @@ s = socket.socket(socket.AF_LORA, socket.SOCK_RAW)
 s.setsockopt(socket.SOL_LORA, socket.SO_DR, 0)
 
 print ("LoRa Initialized")
-
+```
 
 ![Project](https://github.com/mcagriaksoy/fipy-GPS-Accelerometer-LoRa/blob/master/2.jpg)
