@@ -16,7 +16,7 @@ https://www.thethingsnetwork.org/
 CayenneLPP is using for send the data to TTN network. It is easy because, just one click is enough for the decode hex code thanks to cayenneLPP.
 Just select the option Payload Formats>>Cayenne and decode automatically.
 Also In python side we need to add these functions into the codeblock:
-
+```
 lpp.add_accelerometer(xsum,ysum,zsum)
 
 lpp.add_analog_input(abs(gtotal-1))
@@ -26,6 +26,7 @@ lpp.add_analog_input(volt, channel = 114)
 lpp.add_gps(c0, c1, 55)
 
 lpp.send()
+```
 
 ![Cayenne](https://github.com/mcagriaksoy/fipy-GPS-Accelerometer-LoRa/blob/master/1.PNG)
 
