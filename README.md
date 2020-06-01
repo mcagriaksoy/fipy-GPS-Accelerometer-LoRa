@@ -1,9 +1,9 @@
 # fipy-GPS-Accelerometer-LoRa
 
 Project Purpose:
-Read GPS and Accelerometer values and push them to server via LoRa.
+Read GPS and Accelerometer values and push them to the server via LoRa.
 
-Hardwares that used:
+Hardware that used:
 FiPy, PyTrack, Multitech Conduit Gateway
 
 In this project, I pay attention to consume low power and stability. To decrease power consumption I used Cayenne LPP, Accelerometer sleep - wake up modes and close the unnecessary functions of FiPY.
@@ -11,11 +11,11 @@ Network:
 TTN(The things network)
 https://www.thethingsnetwork.org/
 
--No payload decoder is required for this project because I used cayenneLPP library. If I had used other scenerios, I would have required decode my message with payload decoder tab in the TTN. 
+-No payload decoder is required for this project because I used the cayenneLPP library. If I had used other scenarios, I would have required decode my message with the payload decoder tab in the TTN. 
 
-CayenneLPP is using for send the data to TTN network. It is easy because, just one click is enough for the decode hex code thanks to cayenneLPP.
+CayenneLPP is using to send the data to the TTN network. It is easy because just one click is enough for the decode hex code thanks to cayenneLPP.
 Just select the option Payload Formats>>Cayenne and decode automatically.
-Also In python side we need to add these functions into the codeblock:
+Also In python side, we need to add these functions into the code block:
 ```
 lpp.add_accelerometer(xsum,ysum,zsum)
 
