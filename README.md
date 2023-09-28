@@ -1,4 +1,10 @@
-# fipy-GPS-Accelerometer-LoRa
+<a href="https://github.com/mcagriaksoy/fipy-GPS-Accelerometer-LoRa" title="Go to GitHub repo"><img src="https://img.shields.io/static/v1?label=mcagriaksoy&message=fipy-GPS-Accelerometer-LoRa&color=blue&logo=github" alt="mcagriaksoy - fipy-GPS-Accelerometer-LoRa"></a>
+<a href="https://github.com/mcagriaksoy/fipy-GPS-Accelerometer-LoRa/releases/"><img src="https://img.shields.io/github/tag/mcagriaksoy/fipy-GPS-Accelerometer-LoRa?include_prereleases=&sort=semver&color=blue" alt="GitHub tag"></a>
+<a href="#license"><img src="https://img.shields.io/badge/License-MIT-blue" alt="License"></a>
+<a href="https://github.com/mcagriaksoy/fipy-GPS-Accelerometer-LoRa/issues"><img src="https://img.shields.io/github/issues/mcagriaksoy/fipy-GPS-Accelerometer-LoRa" alt="issues - fipy-GPS-Accelerometer-LoRa"></a>
+[![OS - Linux](https://img.shields.io/badge/OS-Linux-blue?logo=linux&logoColor=white)](https://www.linux.org/ "Go to Linux homepage")
+[![Hosted with GH Pages](https://img.shields.io/badge/Hosted_with-GitHub_Pages-blue?logo=github&logoColor=white)](https://pages.github.com/ "Go to GitHub Pages homepage")
+[![OS - Windows](https://img.shields.io/badge/OS-Windows-blue?logo=windows&logoColor=white)](https://www.microsoft.com/ "Go to Microsoft homepage")
 
 Project Purpose:
 Read GPS and Accelerometer values and push them to the server via LoRa.
