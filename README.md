@@ -13,11 +13,13 @@ Read GPS and Accelerometer values and push them to the remote server via LoRa pr
 ## Hardware
 
 FiPy 1.0 with Espressif ESP32
+
 ![fipy_image](img/fipy_image.png)
 
 More information at: https://pycom.io/wp-content/uploads/2018/08/fipySpecsheetAugust2017n2-1.pdf
 
 PyTrack Shield to connect FiPy board:
+
 ![pyTrack_image](img/pyTrack_image.png)
 More information at: https://docs.pycom.io/datasheets/expansionboards/pytrack/
 
