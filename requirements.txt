@@ -1,0 +1,4 @@
+machine==0.0.1
+network==0.1
+pycom==0.6.0
+utime==1.1.7

@@ -1,6 +1,12 @@
-from pytrack import Pytrack
-from LIS2HH12 import LIS2HH12
+"""
+Mehmet Cagri Aksoy - 2018-2023
+"""
 import time
+
+from LIS2HH12 import LIS2HH12
+# Import libraries
+# This file is a modified version of the wakeup.py file from the Pycom documentation.
+from pytrack import Pytrack
 
 py = Pytrack()
 
